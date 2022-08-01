@@ -2,7 +2,11 @@ import 'package:chatflutterui/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const appBarTheme = AppBarTheme(centerTitle: false, elevation: 0);
+const appBarTheme = AppBarTheme(
+  centerTitle: false,
+  elevation: 0,
+  color: kPrimaryColor,
+);
 
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
