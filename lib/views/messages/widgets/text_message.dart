@@ -1,0 +1,35 @@
+import 'package:chatflutterui/constants.dart';
+import 'package:chatflutterui/models/chat_message.dart';
+import 'package:flutter/material.dart';
+
+
+class TextMessage extends StatelessWidget {
+  const TextMessage({
+    Key? key,
+    required this.message,
+  }) : super(key: key);
+
+  final ChatMessage message;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: kDefaultPadding * 0.75,
+        vertical: kDefaultPadding / 2,
+      ),
+      decoration: BoxDecoration(
+        color: kPrimaryColor.withOpacity(message.isSender ? 1 : 0.08),
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: Text(
+        message.text.isNotEmpty ? message.text : "ASD",
+        style: TextStyle(
+          color: message.isSender
+              ? Colors.white
+              : Theme.of(context).textTheme.bodyText1!.color!,
+        ),
+      ),
+    );
+  }
+}
